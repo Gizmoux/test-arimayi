@@ -28,9 +28,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <I18nextProvider i18n={i18next}>
-          <Provider store={store}>{children}</Provider>
-        </I18nextProvider>
+        <Provider store={store}>
+          <I18nextProvider i18n={i18next}>{children}</I18nextProvider>
+        </Provider>
       </body>
     </html>
   );
