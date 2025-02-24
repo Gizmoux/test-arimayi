@@ -11,8 +11,7 @@
 - Framework Frontend: NextJS 14 (avec App Router)
 - State Management: Redux
 - UI Components: Ant Design
-- Internationalisation: i18n pour la traduction en plusieurs langues
-- IDE Recommandé: Visual Studio Code
+- Traduction en plusieurs langues: i18n
 
 ## Installation
 
