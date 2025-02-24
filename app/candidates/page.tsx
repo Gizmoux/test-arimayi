@@ -5,7 +5,9 @@ import { Button, Checkbox, DatePicker, Form, Input, Select } from "antd";
 type FieldType = {
   username?: string;
   password?: string;
-  remember?: string;
+  select?: string;
+  date?: string;
+  remember?: boolean;
 };
 
 const onFinish: FormProps<FieldType>["onFinish"] = (values) => {
@@ -18,8 +20,11 @@ const onFinishFailed: FormProps<FieldType>["onFinishFailed"] = (errorInfo) => {
 const CandidatesPage = () => {
   return (
     <div>
-      <h1>Candidates Page</h1>
-      <h2>Informations personnelles</h2>
+      <Button type="primary" href="/" className="m-4">
+        Accueil
+      </Button>
+      <h1>Informations personnelles du candidats</h1>
+
       <Form
         name="basic"
         labelCol={{ span: 8 }}
@@ -48,16 +53,20 @@ const CandidatesPage = () => {
         </Form.Item>
 
         <Form.Item
-          label="Select"
-          name="Select"
+          label="Ma formation"
+          name="select"
           rules={[{ required: true, message: "Please input!" }]}
         >
           <Select>
-            <Select.Option value="demo">Demo</Select.Option>
+            <Select.Option value="nextjs">NextJs</Select.Option>
+            <Select.Option value="javascript">Javascript</Select.Option>
+            <Select.Option value="react">React</Select.Option>
+            <Select.Option value="python">Python</Select.Option>
+            <Select.Option value="vue">Vue</Select.Option>
           </Select>
         </Form.Item>
         <Form.Item
-          label="DatePicker"
+          label="Date de naissance"
           name="DatePicker"
           rules={[{ required: true, message: "Please input!" }]}
         >
