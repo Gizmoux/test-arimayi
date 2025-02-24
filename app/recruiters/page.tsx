@@ -1,6 +1,6 @@
 "use client";
 import { RootState } from "@/redux/store";
-import { Divider, List } from "antd";
+import { Button, Divider, List } from "antd";
 import Link from "next/link";
 import React from "react";
 import { useSelector } from "react-redux";
@@ -12,6 +12,9 @@ const RecruitersPage = () => {
 
   return (
     <>
+      <Button type="link" href="/" className="m-4">
+        Accueil
+      </Button>
       <Divider orientation="left">Page Candidats</Divider>
       <List
         size="large"
@@ -21,7 +24,7 @@ const RecruitersPage = () => {
         dataSource={candidatesInfos}
         renderItem={(item) => (
           <List.Item>
-            <Link href={`/recruiters/${item.id}`}>{item.name}</Link>
+            <Link href={`/recruiters/${item.id}`}>{item.username}</Link>
           </List.Item>
         )}
       />
