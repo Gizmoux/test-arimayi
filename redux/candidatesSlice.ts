@@ -2,7 +2,11 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface Candidate {
   id: string;
-  name: string;
+  username: string;
+  password: string;
+  select: string;
+  date: string;
+  remember: boolean;
 }
 
 interface CandidatesState {
@@ -11,21 +15,53 @@ interface CandidatesState {
 
 const initialState: CandidatesState = {
   candidates: [
-    { id: "1", name: "Jean" },
-    { id: "2", name: "Claude" },
-    { id: "3", name: "Paul" },
-
+    {
+      id: "1",
+      username: "Jean",
+      password: "",
+      select: "nextJS",
+      date: "",
+      remember: false,
+    },
+    {
+      id: "2",
+      username: "Claude",
+      password: "",
+      select: "Javascript",
+      date: "",
+      remember: false,
+    },
+    {
+      id: "3",
+      username: "Paul",
+      password: "",
+      select: "Python",
+      date: "",
+      remember: false,
+    },
     {
       id: "4",
-      name: "Marc",
+      username: "Marc",
+      password: "",
+      select: "NextJs",
+      date: "",
+      remember: false,
     },
     {
       id: "5",
-      name: "Pierre",
+      username: "Pierre",
+      password: "",
+      select: "Python",
+      date: "",
+      remember: false,
     },
     {
       id: "6",
-      name: "Albert",
+      username: "Albert",
+      password: "",
+      select: "Javascript",
+      date: "",
+      remember: false,
     },
   ],
 };
@@ -37,9 +73,13 @@ const candidatesSlice = createSlice({
     setCandidates(state, action: PayloadAction<Candidate[]>) {
       state.candidates = action.payload;
     },
+    // Si je veux ajouter des informations sur mon candidat et les afficher dans une page
+    addCandidate: (state, action: PayloadAction<Candidate>) => {
+      state.candidates.push(action.payload);
+    },
   },
 });
 
-export const { setCandidates } = candidatesSlice.actions;
+export const { setCandidates, addCandidate } = candidatesSlice.actions;
 
 export default candidatesSlice.reducer;
