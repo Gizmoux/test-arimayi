@@ -4,6 +4,8 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { Provider } from "react-redux";
 import { store } from "@/redux/store";
+import { I18nextProvider } from "react-i18next";
+import i18next from "@/lib/i18next";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -26,7 +28,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Provider store={store}>{children}</Provider>
+        <I18nextProvider i18n={i18next}>
+          <Provider store={store}>{children}</Provider>
+        </I18nextProvider>
       </body>
     </html>
   );
