@@ -16,7 +16,7 @@
 
 ## Installation
 
-1. Clonez ce dépôt : `git clone <URL-de-ton-repo-Github>`
+1. Clonez ce dépôt : `git clone https://github.com/Gizmoux/test-arimayi.git`
 2. Installez les dépendances : `npm install` ou `yarn install`
 3. Lancez l'application : `npm run dev`
 
